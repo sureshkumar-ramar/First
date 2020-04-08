@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+        <script src="jquery-3.4.1.min.js"></script>
+    
+    </head>
+    <body>
+    <h1>Test</h1>   
+    <input type="text" name="txt1" id="txt1">
+    <button id="btn1">First button</button>
+    <button id="btn2">Second button</button>
+    <button id="btn3">Third button</button>
+    <ul id="ul1">
+        
+    </ul>
+
+    
+    
+    <script>
+        $("h1").click(function ()
+        {
+            
+            $(this).css("background","red");
+
+        });  
+        $("input[type='text']").keypress(function(event)
+        {
+            
+            if(event.which===13)
+            {
+               var item=$(this).val();
+                $("#ul1").append("<li>"+item+"</li>");
+                $(this).val("");
+            }
+        }
+        );
+        $("#btn1").on("click",function()
+        {
+           $("#btn2").fadeOut(1000,function(){
+           
+            $(this).remove();
+               
+           });
+           console.log("fadeout completed") ;
+        });
+        
+    </script>
+    </body>
+</html>
